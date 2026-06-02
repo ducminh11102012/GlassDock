@@ -5,6 +5,7 @@ final class DockItemView: NSView {
     var onTap: (() -> Void)?
     var onRightClick: ((NSEvent) -> Void)?
 
+    private let hoverHighlightView = NSView(frame: .zero)
     private let iconImageView = NSImageView(frame: .zero)
     private let dotView = NSView(frame: .zero)
     private var tooltipWindow: NSPanel?
@@ -29,6 +30,14 @@ final class DockItemView: NSView {
         wantsLayer = true
         layer?.masksToBounds = false
 
+        hoverHighlightView.wantsLayer = true
+        hoverHighlightView.layer?.backgroundColor = NSColor(white: 1.0, alpha: 0.18).cgColor
+        hoverHighlightView.layer?.borderColor = NSColor(white: 1.0, alpha: 0.28).cgColor
+        hoverHighlightView.layer?.borderWidth = 0.75
+        hoverHighlightView.layer?.cornerRadius = 13
+        hoverHighlightView.alphaValue = 0
+        addSubview(hoverHighlightView)
+
         iconImageView.imageScaling = .scaleProportionallyUpOrDown
         iconImageView.image = item.icon
         iconImageView.wantsLayer = true
@@ -52,10 +61,13 @@ final class DockItemView: NSView {
         let iconY = dotY + dotSize + 2
 
         iconImageView.frame = NSRect(x: iconX, y: iconY, width: iconSize, height: iconSize)
+        hoverHighlightView.frame = iconImageView.frame.insetBy(dx: -4, dy: -4)
         dotView.frame = NSRect(x: (bounds.width - dotSize) / 2, y: dotY, width: dotSize, height: dotSize)
     }
 
     func setMagnification(distance: Int, isHovered: Bool) {
+        hoverHighlightView.animator().alphaValue = isHovered ? 1 : 0
+
         let scale = Self.scaleByDistance[distance] ?? 1.0
         guard scale != currentScale else { return }
         if currentScale == 1.0 {
