@@ -1,6 +1,8 @@
 import AppKit
 
 final class DockView: NSView {
+    override var isOpaque: Bool { false }
+
     private var items: [DockItem] = []
     private var itemViews: [NSView] = []
     private let backgroundView = DockBackgroundView(frame: .zero)
