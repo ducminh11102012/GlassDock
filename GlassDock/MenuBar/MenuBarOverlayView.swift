@@ -83,11 +83,9 @@ final class MenuBarOverlayView: NSView {
 
     private func drawSymbol(named name: String, in rect: NSRect) {
         guard let image = NSImage(systemSymbolName: name, accessibilityDescription: nil) else { return }
-        image.isTemplate = true
-        NSGraphicsContext.saveGraphicsState()
-        menuTextColor.set()
-        image.draw(in: rect, from: .zero, operation: .sourceOver, fraction: 1.0)
-        NSGraphicsContext.restoreGraphicsState()
+        let configuration = NSImage.SymbolConfiguration(paletteColors: [menuTextColor])
+        let tintedImage = image.withSymbolConfiguration(configuration) ?? image
+        tintedImage.draw(in: rect, from: .zero, operation: .sourceOver, fraction: 1.0)
     }
 
     private func drawText(_ text: String, at point: NSPoint, attributes: [NSAttributedString.Key: Any]) {
@@ -110,9 +108,9 @@ final class MenuBarOverlayView: NSView {
     }
 
     private var menuTextColor: NSColor {
-        // Keep text Apple-like and readable over most wallpapers. We avoid a
-        // background tint because the user requested a fully transparent bar.
-        NSColor.black.withAlphaComponent(0.88)
+        // The replacement Menu Bar must be fully transparent, so readability is
+        // handled by white Apple-style text/icons instead of any background tint.
+        NSColor.white.withAlphaComponent(0.96)
     }
 
     private var appleAttributes: [NSAttributedString.Key: Any] {

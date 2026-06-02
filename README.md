@@ -34,4 +34,4 @@ The app hides the system Dock while running and restores it on termination. CI a
 
 GlassDock draws a very light, translucent Dock shelf using only `NSView.draw(_:)`, alpha compositing, gradients, and strokes. It intentionally does not use `NSVisualEffectView` or SwiftUI blur, so the Dock should look like Apple's Dock glass while still letting the wallpaper show through clearly behind the icons.
 
-For the Menu Bar, GlassDock places a non-interactive replacement panel above the real system menu bar. The panel draws the exact wallpaper slice for a fully transparent background, then redraws Apple-like left menu labels and right status/time text while passing mouse clicks through to the real menu bar underneath.
+For the Menu Bar, GlassDock places a non-interactive replacement panel above the real system menu bar. The panel draws only the exact wallpaper slice for a fully transparent background, then redraws Apple-like left menu labels and right status/time text in white San Francisco while passing mouse clicks through to the real menu bar underneath.
