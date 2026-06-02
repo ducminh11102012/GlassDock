@@ -1,1 +1,25 @@
 # GlassDock
+
+GlassDock is a native macOS AppKit application that replaces the visible system Dock with a floating glassmorphism dock and adds a transparent Menu Bar overlay. It is designed for machines where GPU-accelerated Apple blur components are unreliable, so it intentionally avoids `NSVisualEffectView`, SwiftUI, and third-party dependencies.
+
+## Features
+
+- Floating custom dock rendered with `NSView.draw(_:)`, alpha compositing, gradients, and vector strokes.
+- Transparent Menu Bar illusion by drawing the matching wallpaper slice behind real menu bar text/icons.
+- Automatic sync with the real macOS Dock by watching `~/Library/Preferences/com.apple.dock.plist` via `kqueue`.
+- Running app indicators, app activation/launching, Finder reveal, hide, quit, tooltips, and hover magnification.
+- No SIP patching and no private frameworks.
+
+## Requirements
+
+- macOS 13 Ventura or later
+- Xcode 15 or later
+- App Sandbox disabled
+
+## Build locally
+
+```bash
+xcodebuild -project GlassDock.xcodeproj -scheme GlassDock -configuration Release build
+```
+
+The app hides the system Dock while running and restores it on termination.
