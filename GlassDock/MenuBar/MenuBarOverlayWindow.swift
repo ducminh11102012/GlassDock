@@ -2,6 +2,7 @@ import AppKit
 
 final class MenuBarOverlayWindow: NSPanel {
     private let overlayView = MenuBarOverlayView(frame: .zero)
+    private var refreshTimer: Timer?
 
     init() {
         super.init(contentRect: .zero, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
@@ -9,6 +10,11 @@ final class MenuBarOverlayWindow: NSPanel {
         buildUI()
         reposition()
         refreshWallpaper()
+        startDynamicRefresh()
+    }
+
+    deinit {
+        refreshTimer?.invalidate()
     }
 
     private func configure() {
@@ -16,7 +22,14 @@ final class MenuBarOverlayWindow: NSPanel {
         backgroundColor = .clear
         hasShadow = false
         ignoresMouseEvents = true
-        level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) - 1)
+
+        // Public APIs cannot remove only the system menu-bar background while
+        // keeping Apple's private text/icons. Instead, this replacement panel
+        // sits above the real menu bar, draws the wallpaper slice, and redraws
+        // Apple-like labels/icons. Mouse events still pass through to the real
+        // menu bar underneath.
+        level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.mainMenuWindow)) + 1)
+
         collectionBehavior = [.canJoinAllSpaces, .stationary, .ignoresCycle, .fullScreenAuxiliary]
         isReleasedWhenClosed = false
     }
@@ -40,11 +53,21 @@ final class MenuBarOverlayWindow: NSPanel {
         )
         setFrame(overlayFrame, display: true)
         overlayView.frame = contentView?.bounds ?? .zero
+        overlayView.refreshDynamicContent()
     }
 
     func refreshWallpaper() {
         guard let screen = NSScreen.main else { return }
         overlayView.refresh(screen: screen, windowFrame: frame)
+    }
+
+    private func startDynamicRefresh() {
+        refreshTimer?.invalidate()
+        let timer = Timer(timeInterval: 1.0, repeats: true) { [weak self] _ in
+            self?.overlayView.refreshDynamicContent()
+        }
+        refreshTimer = timer
+        RunLoop.main.add(timer, forMode: .common)
     }
 
     override var canBecomeKey: Bool { false }
