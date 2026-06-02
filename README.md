@@ -6,7 +6,7 @@ GlassDock is a native macOS AppKit application that replaces the visible system 
 
 - Floating custom dock with an Apple-like translucent shelf so the wallpaper remains visible behind the icons.
 - Fully transparent Menu Bar replacement that draws the wallpaper slice and redraws Apple-like menu/status text over it.
-- Automatic sync with the real macOS Dock by watching `~/Library/Preferences/com.apple.dock.plist` via `kqueue`.
+- Automatic sync with the real macOS Dock by watching `~/Library/Preferences/com.apple.dock.plist` via `kqueue`, with Finder always pinned first like Apple's Dock.
 - Running app indicators, app activation/launching, Finder reveal, hide, quit, tooltips, and hover magnification.
 - No SIP patching and no private frameworks.
 

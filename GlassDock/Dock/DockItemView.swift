@@ -153,7 +153,7 @@ final class DockItemView: NSView {
         guard !item.name.isEmpty, !item.isSeparator, tooltipWindow == nil else { return }
 
         let label = NSTextField(labelWithString: item.name)
-        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.font = Self.sanFrancisco(size: 12, weight: .medium)
         label.textColor = .white
         label.sizeToFit()
 
@@ -189,5 +189,10 @@ final class DockItemView: NSView {
     private func hideTooltip() {
         tooltipWindow?.orderOut(nil)
         tooltipWindow = nil
+    }
+
+    private static func sanFrancisco(size: CGFloat, weight: NSFont.Weight) -> NSFont {
+        // AppKit's system font is San Francisco on macOS.
+        NSFont.systemFont(ofSize: size, weight: weight)
     }
 }

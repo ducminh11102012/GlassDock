@@ -2,6 +2,8 @@ import AppKit
 import Foundation
 
 final class DockReader {
+    private let finderBundleIdentifier = "com.apple.finder"
+    private let finderPath = "/System/Library/CoreServices/Finder.app"
     private let plistURL: URL = FileManager.default.homeDirectoryForCurrentUser
         .appendingPathComponent("Library/Preferences/com.apple.dock.plist")
 
@@ -13,10 +15,15 @@ final class DockReader {
             return fallbackItems()
         }
 
-        var items: [DockItem] = []
+        var appItems: [DockItem] = []
         if let apps = plist["persistent-apps"] as? [[String: Any]] {
-            items += apps.compactMap { parseTile($0, defaultType: .app) }
+            appItems = apps.compactMap { parseTile($0, defaultType: .app) }
         }
+
+        // Finder is a permanent Apple Dock item and is usually not stored in
+        // persistent-apps, so inject it to keep GlassDock visually in sync with
+        // the real Dock instead of starting at Launchpad/Safari.
+        var items = ensureFinderIsFirst(in: appItems)
 
         items.append(DockItem(name: "", icon: nil, itemType: .separator))
 
@@ -29,6 +36,26 @@ final class DockReader {
         items.append(DockItem(name: "Trash", icon: trashIcon, itemType: .trash))
 
         return items
+    }
+
+    private func ensureFinderIsFirst(in appItems: [DockItem]) -> [DockItem] {
+        var filteredItems = appItems.filter { $0.bundleIdentifier != finderBundleIdentifier }
+        filteredItems.insert(finderItem(), at: 0)
+        return filteredItems
+    }
+
+    private func finderItem() -> DockItem {
+        let finderURL = URL(fileURLWithPath: finderPath)
+        let finderIcon = NSWorkspace.shared.icon(forFile: finderURL.path)
+        finderIcon.size = NSSize(width: 128, height: 128)
+        return DockItem(
+            bundleIdentifier: finderBundleIdentifier,
+            path: finderURL,
+            name: "Finder",
+            icon: finderIcon,
+            isRunning: true,
+            itemType: .app
+        )
     }
 
     private func parseTile(_ dict: [String: Any], defaultType: DockItem.ItemType) -> DockItem? {
@@ -63,10 +90,8 @@ final class DockReader {
     }
 
     private func fallbackItems() -> [DockItem] {
-        let finderURL = URL(fileURLWithPath: "/System/Library/CoreServices/Finder.app")
-        let finderIcon = NSWorkspace.shared.icon(forFile: finderURL.path)
         return [
-            DockItem(bundleIdentifier: "com.apple.finder", path: finderURL, name: "Finder", icon: finderIcon, isRunning: true, itemType: .app),
+            finderItem(),
             DockItem(name: "", icon: nil, itemType: .separator),
             DockItem(name: "Trash", icon: NSImage(named: NSImage.trashEmptyName), itemType: .trash)
         ]

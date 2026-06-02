@@ -5,6 +5,7 @@ final class MenuBarOverlayView: NSView {
     private var activeApplicationName = "Finder"
     private var clockText = ""
 
+    private let appleLogo = ""
     private let horizontalPadding: CGFloat = 14
     private let itemSpacing: CGFloat = 18
 
@@ -52,7 +53,7 @@ final class MenuBarOverlayView: NSView {
         var x = horizontalPadding
         let baselineY = textY(for: 13)
 
-        drawText("", at: NSPoint(x: x, y: textY(for: 16)), attributes: appleAttributes)
+        drawText(appleLogo, at: NSPoint(x: x, y: textY(for: 16)), attributes: appleAttributes)
         x += 30
 
         drawText(activeApplicationName, at: NSPoint(x: x, y: baselineY), attributes: activeAppAttributes)
@@ -116,23 +117,29 @@ final class MenuBarOverlayView: NSView {
 
     private var appleAttributes: [NSAttributedString.Key: Any] {
         [
-            .font: NSFont.systemFont(ofSize: 16, weight: .semibold),
+            .font: Self.sanFrancisco(size: 16, weight: .semibold),
             .foregroundColor: menuTextColor
         ]
     }
 
     private var activeAppAttributes: [NSAttributedString.Key: Any] {
         [
-            .font: NSFont.systemFont(ofSize: 13, weight: .semibold),
+            .font: Self.sanFrancisco(size: 13, weight: .semibold),
             .foregroundColor: menuTextColor
         ]
     }
 
     private var menuItemAttributes: [NSAttributedString.Key: Any] {
         [
-            .font: NSFont.systemFont(ofSize: 13, weight: .regular),
+            .font: Self.sanFrancisco(size: 13, weight: .regular),
             .foregroundColor: menuTextColor
         ]
+    }
+
+    private static func sanFrancisco(size: CGFloat, weight: NSFont.Weight) -> NSFont {
+        // AppKit's system font is San Francisco on macOS; centralize it so the
+        // replacement bar never falls back to a custom/non-Apple font.
+        NSFont.systemFont(ofSize: size, weight: weight)
     }
 
     private static let clockFormatter: DateFormatter = {
