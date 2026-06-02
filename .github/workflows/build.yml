@@ -1,0 +1,45 @@
+name: Build GlassDock
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build macOS app
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build Release app
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project GlassDock.xcodeproj \
+            -scheme GlassDock \
+            -configuration Release \
+            -destination 'platform=macOS,arch=x86_64' \
+            -derivedDataPath build/DerivedData \
+            ARCHS=x86_64 \
+            ONLY_ACTIVE_ARCH=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package app artifact
+        run: |
+          set -euo pipefail
+          APP_PATH="build/DerivedData/Build/Products/Release/GlassDock.app"
+          ditto -c -k --keepParent "$APP_PATH" GlassDock.zip
+
+      - name: Upload app artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GlassDock-macOS-x86_64-app
+          path: GlassDock.zip
+          if-no-files-found: error

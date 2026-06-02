@@ -1,0 +1,139 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC867AB56EFC39FF845908F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C6A74B7FDCE24FED96A372 /* main.swift */; };
+		56B78BABA20C70285106D91B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C082C735830B7D36171FCF9 /* AppDelegate.swift */; };
+		3014AE7D2B6B4B66E84A52D5 /* DockWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C2C6395082B9BB337A3311 /* DockWindow.swift */; };
+		594ACC8695111DB07FC42E3B /* DockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF073C4F5AE036087585DD0 /* DockViewController.swift */; };
+		02E0A1F0853899AB6F86CAF0 /* DockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BD4F689ACCF7E4A29B398 /* DockView.swift */; };
+		E4284A56C5DA358537AB2B56 /* DockBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5E38749E36A0435C16785 /* DockBackgroundView.swift */; };
+		429506175C1066BD737807C2 /* DockItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466F8118D95ADD3FD0B1DF70 /* DockItemView.swift */; };
+		71B1A684E90D60127E055F77 /* DockSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894829C3C431D4CC11F0E28F /* DockSeparatorView.swift */; };
+		C8DF08EA29500963B6FC0BD9 /* MenuBarOverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FA928A5AC8346EBA2A2DCD /* MenuBarOverlayWindow.swift */; };
+		C13FD01F7514C8A9C79E7A18 /* MenuBarOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57C4A1EAC3D4E6609F35452 /* MenuBarOverlayView.swift */; };
+		36187E28A46E20CBAB4A0615 /* DockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ADCD4428B403851AE9E7A9 /* DockItem.swift */; };
+		F0B9C32ECCC7B7E293BD336C /* DockReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D279D47E5A531146E4D85A4 /* DockReader.swift */; };
+		6DE90AB07C559C5D5556E8C6 /* DockWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECA038442083CD9B7894FB /* DockWatcher.swift */; };
+		F0968E0C0B78A0AF5ACC2211 /* RunningAppsMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46973F57221127098CA53757 /* RunningAppsMonitor.swift */; };
+		94D06E7FBEAF108606B3A315 /* IconFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03BA9B4974FCE7A11CFFB6D /* IconFetcher.swift */; };
+		857C9CD5F1DD562EBFCB649A /* WallpaperReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C5B356FEC660E03EC8EC3 /* WallpaperReader.swift */; };
+		F335241B80EB0910505AD3B2 /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF5DA5F5948F2701F08AB53 /* AppLauncher.swift */; };
+		BF7F34F4F7F9C8C04499DDF3 /* SystemDockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A957A2B7C080EFC5B3A43 /* SystemDockManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8BCD5BC4CDFDF0918087C782 /* GlassDock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlassDock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C6A74B7FDCE24FED96A372 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3C082C735830B7D36171FCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		32C2C6395082B9BB337A3311 /* DockWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockWindow.swift; sourceTree = "<group>"; };
+		CBF073C4F5AE036087585DD0 /* DockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockViewController.swift; sourceTree = "<group>"; };
+		1B5BD4F689ACCF7E4A29B398 /* DockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockView.swift; sourceTree = "<group>"; };
+		E5D5E38749E36A0435C16785 /* DockBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockBackgroundView.swift; sourceTree = "<group>"; };
+		466F8118D95ADD3FD0B1DF70 /* DockItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItemView.swift; sourceTree = "<group>"; };
+		894829C3C431D4CC11F0E28F /* DockSeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockSeparatorView.swift; sourceTree = "<group>"; };
+		84FA928A5AC8346EBA2A2DCD /* MenuBarOverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarOverlayWindow.swift; sourceTree = "<group>"; };
+		C57C4A1EAC3D4E6609F35452 /* MenuBarOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarOverlayView.swift; sourceTree = "<group>"; };
+		73ADCD4428B403851AE9E7A9 /* DockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockItem.swift; sourceTree = "<group>"; };
+		0D279D47E5A531146E4D85A4 /* DockReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockReader.swift; sourceTree = "<group>"; };
+		9DECA038442083CD9B7894FB /* DockWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockWatcher.swift; sourceTree = "<group>"; };
+		46973F57221127098CA53757 /* RunningAppsMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningAppsMonitor.swift; sourceTree = "<group>"; };
+		A03BA9B4974FCE7A11CFFB6D /* IconFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFetcher.swift; sourceTree = "<group>"; };
+		236C5B356FEC660E03EC8EC3 /* WallpaperReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperReader.swift; sourceTree = "<group>"; };
+		8DF5DA5F5948F2701F08AB53 /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
+		4A8A957A2B7C080EFC5B3A43 /* SystemDockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemDockManager.swift; sourceTree = "<group>"; };
+		57CD2BA91480CAF45FB72126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B920D682D671B63F0D25FF7 /* GlassDock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GlassDock.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		E50290A24C49A459B43487C5 = {isa = PBXGroup; children = (
+			7C4EE1620A2E43D4C62049B9,
+			FBDC4F23F93125BBEEAE800C,
+		); sourceTree = "<group>"; };
+		FBDC4F23F93125BBEEAE800C /* Products */ = {isa = PBXGroup; children = (8BCD5BC4CDFDF0918087C782 /* GlassDock.app */,); name = Products; sourceTree = "<group>"; };
+		7C4EE1620A2E43D4C62049B9 /* GlassDock */ = {isa = PBXGroup; children = (
+			78C6A74B7FDCE24FED96A372,
+			3C082C735830B7D36171FCF9,
+			09B53281DCA8B119F26E6D5A,
+			278FACA77415EC17105A8771,
+			CF1922C8D36798D10BC60060,
+			121BBCBF42974BB31BC56237,
+			57CD2BA91480CAF45FB72126,
+			7B920D682D671B63F0D25FF7,
+		); path = GlassDock; sourceTree = "<group>"; };
+		09B53281DCA8B119F26E6D5A /* Dock */ = {isa = PBXGroup; children = (
+			32C2C6395082B9BB337A3311,
+			CBF073C4F5AE036087585DD0,
+			1B5BD4F689ACCF7E4A29B398,
+			E5D5E38749E36A0435C16785,
+			466F8118D95ADD3FD0B1DF70,
+			894829C3C431D4CC11F0E28F,
+		); path = Dock; sourceTree = "<group>"; };
+		278FACA77415EC17105A8771 /* MenuBar */ = {isa = PBXGroup; children = (
+			84FA928A5AC8346EBA2A2DCD,
+			C57C4A1EAC3D4E6609F35452,
+		); path = MenuBar; sourceTree = "<group>"; };
+		CF1922C8D36798D10BC60060 /* Data */ = {isa = PBXGroup; children = (
+			73ADCD4428B403851AE9E7A9,
+			0D279D47E5A531146E4D85A4,
+			9DECA038442083CD9B7894FB,
+			46973F57221127098CA53757,
+		); path = Data; sourceTree = "<group>"; };
+		121BBCBF42974BB31BC56237 /* Utilities */ = {isa = PBXGroup; children = (
+			A03BA9B4974FCE7A11CFFB6D,
+			236C5B356FEC660E03EC8EC3,
+			8DF5DA5F5948F2701F08AB53,
+			4A8A957A2B7C080EFC5B3A43,
+		); path = Utilities; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8A3AD980EC179856012B7E /* GlassDock */ = {isa = PBXNativeTarget; buildConfigurationList = 1E73909B0AFD8FE509E7E205 /* Build configuration list for PBXNativeTarget "GlassDock" */; buildPhases = (4E57AE888889001C06A4F7E8 /* Sources */,); buildRules = (); dependencies = (); name = GlassDock; productName = GlassDock; productReference = 8BCD5BC4CDFDF0918087C782 /* GlassDock.app */; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500; TargetAttributes = {0E8A3AD980EC179856012B7E = {CreatedOnToolsVersion = 15.0;};};}; buildConfigurationList = F14BB2B7CE8BEEF053C64BF3 /* Build configuration list for PBXProject "GlassDock" */; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base,); mainGroup = E50290A24C49A459B43487C5; productRefGroup = FBDC4F23F93125BBEEAE800C /* Products */; projectDirPath = ""; projectRoot = ""; targets = (0E8A3AD980EC179856012B7E /* GlassDock */,); };
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E57AE888889001C06A4F7E8 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			AC867AB56EFC39FF845908F7 /* main.swift in Sources */,
+			56B78BABA20C70285106D91B /* AppDelegate.swift in Sources */,
+			3014AE7D2B6B4B66E84A52D5 /* DockWindow.swift in Sources */,
+			594ACC8695111DB07FC42E3B /* DockViewController.swift in Sources */,
+			02E0A1F0853899AB6F86CAF0 /* DockView.swift in Sources */,
+			E4284A56C5DA358537AB2B56 /* DockBackgroundView.swift in Sources */,
+			429506175C1066BD737807C2 /* DockItemView.swift in Sources */,
+			71B1A684E90D60127E055F77 /* DockSeparatorView.swift in Sources */,
+			C8DF08EA29500963B6FC0BD9 /* MenuBarOverlayWindow.swift in Sources */,
+			C13FD01F7514C8A9C79E7A18 /* MenuBarOverlayView.swift in Sources */,
+			36187E28A46E20CBAB4A0615 /* DockItem.swift in Sources */,
+			F0B9C32ECCC7B7E293BD336C /* DockReader.swift in Sources */,
+			6DE90AB07C559C5D5556E8C6 /* DockWatcher.swift in Sources */,
+			F0968E0C0B78A0AF5ACC2211 /* RunningAppsMonitor.swift in Sources */,
+			94D06E7FBEAF108606B3A315 /* IconFetcher.swift in Sources */,
+			857C9CD5F1DD562EBFCB649A /* WallpaperReader.swift in Sources */,
+			F335241B80EB0910505AD3B2 /* AppLauncher.swift in Sources */,
+			BF7F34F4F7F9C8C04499DDF3 /* SystemDockManager.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		671D9E2E95809E27B85B6A20 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ANALYZER_NONNULL = YES; CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE; CLANG_CXX_LANGUAGE_STANDARD = "gnu++20"; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; CLANG_ENABLE_OBJC_WEAK = YES; CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES; CLANG_WARN_BOOL_CONVERSION = YES; CLANG_WARN_COMMA = YES; CLANG_WARN_CONSTANT_CONVERSION = YES; CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES; CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR; CLANG_WARN_DOCUMENTATION_COMMENTS = YES; CLANG_WARN_EMPTY_BODY = YES; CLANG_WARN_ENUM_CONVERSION = YES; CLANG_WARN_INFINITE_RECURSION = YES; CLANG_WARN_INT_CONVERSION = YES; CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES; CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES; CLANG_WARN_OBJC_LITERAL_CONVERSION = YES; CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR; CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES; CLANG_WARN_RANGE_LOOP_ANALYSIS = YES; CLANG_WARN_STRICT_PROTOTYPES = YES; CLANG_WARN_SUSPICIOUS_MOVE = YES; CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE; CLANG_WARN_UNREACHABLE_CODE = YES; CLANG_WARN__DUPLICATE_METHOD_MATCH = YES; COPY_PHASE_STRIP = NO; ENABLE_STRICT_OBJC_MSGSEND = YES; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; GCC_NO_COMMON_BLOCKS = YES; GCC_WARN_64_TO_32_BIT_CONVERSION = YES; GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR; GCC_WARN_UNDECLARED_SELECTOR = YES; GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE; GCC_WARN_UNUSED_FUNCTION = YES; GCC_WARN_UNUSED_VARIABLE = YES; MACOSX_DEPLOYMENT_TARGET = 13.0; SDKROOT = macosx; SWIFT_VERSION = 5.9; DEBUG_INFORMATION_FORMAT = dwarf; GCC_OPTIMIZATION_LEVEL = 0; ONLY_ACTIVE_ARCH = YES; SWIFT_OPTIMIZATION_LEVEL = "-Onone";}; name = Debug; };
+		AC5D6E15C21DCFD954DE2D0E /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ANALYZER_NONNULL = YES; CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE; CLANG_CXX_LANGUAGE_STANDARD = "gnu++20"; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; CLANG_ENABLE_OBJC_WEAK = YES; CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES; CLANG_WARN_BOOL_CONVERSION = YES; CLANG_WARN_COMMA = YES; CLANG_WARN_CONSTANT_CONVERSION = YES; CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES; CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR; CLANG_WARN_DOCUMENTATION_COMMENTS = YES; CLANG_WARN_EMPTY_BODY = YES; CLANG_WARN_ENUM_CONVERSION = YES; CLANG_WARN_INFINITE_RECURSION = YES; CLANG_WARN_INT_CONVERSION = YES; CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES; CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES; CLANG_WARN_OBJC_LITERAL_CONVERSION = YES; CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR; CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES; CLANG_WARN_RANGE_LOOP_ANALYSIS = YES; CLANG_WARN_STRICT_PROTOTYPES = YES; CLANG_WARN_SUSPICIOUS_MOVE = YES; CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE; CLANG_WARN_UNREACHABLE_CODE = YES; CLANG_WARN__DUPLICATE_METHOD_MATCH = YES; COPY_PHASE_STRIP = NO; ENABLE_STRICT_OBJC_MSGSEND = YES; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; GCC_NO_COMMON_BLOCKS = YES; GCC_WARN_64_TO_32_BIT_CONVERSION = YES; GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR; GCC_WARN_UNDECLARED_SELECTOR = YES; GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE; GCC_WARN_UNUSED_FUNCTION = YES; GCC_WARN_UNUSED_VARIABLE = YES; MACOSX_DEPLOYMENT_TARGET = 13.0; SDKROOT = macosx; SWIFT_VERSION = 5.9; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O";}; name = Release; };
+		5FD7CB20C3C0A7C4C28C16DB /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { ARCHS = x86_64; CODE_SIGN_ENTITLEMENTS = GlassDock/GlassDock.entitlements; CODE_SIGN_STYLE = Automatic; COMBINE_HIDPI_IMAGES = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = GlassDock/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = com.glassdock.app; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.9; }; name = Debug; };
+		AF694ED35853F54DD12B6EE6 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { ARCHS = x86_64; CODE_SIGN_ENTITLEMENTS = GlassDock/GlassDock.entitlements; CODE_SIGN_STYLE = Automatic; COMBINE_HIDPI_IMAGES = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = GlassDock/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = com.glassdock.app; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.9; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F14BB2B7CE8BEEF053C64BF3 /* Build configuration list for PBXProject "GlassDock" */ = {isa = XCConfigurationList; buildConfigurations = (671D9E2E95809E27B85B6A20 /* Debug */, AC5D6E15C21DCFD954DE2D0E /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		1E73909B0AFD8FE509E7E205 /* Build configuration list for PBXNativeTarget "GlassDock" */ = {isa = XCConfigurationList; buildConfigurations = (5FD7CB20C3C0A7C4C28C16DB /* Debug */, AF694ED35853F54DD12B6EE6 /* Release */,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}
