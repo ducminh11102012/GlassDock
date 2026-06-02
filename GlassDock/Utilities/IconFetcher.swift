@@ -13,7 +13,7 @@ enum IconFetcher {
 
         switch type {
         case .folder:
-            let folderType = NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon))
+            let folderType = NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon)) ?? "public.folder"
             let icon = NSWorkspace.shared.icon(forFileType: folderType)
             icon.size = NSSize(width: 128, height: 128)
             return icon

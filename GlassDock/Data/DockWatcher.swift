@@ -60,15 +60,14 @@ final class DockWatcher {
     }
 
     private func watchCurrentFileDescriptor() {
-        var event = kevent()
-        EV_SET(
-            &event,
-            UInt(watchedDescriptor),
-            Int16(EVFILT_VNODE),
-            UInt16(EV_ADD | EV_ENABLE | EV_CLEAR),
-            UInt32(NOTE_WRITE | NOTE_RENAME | NOTE_DELETE | NOTE_REVOKE),
-            0,
-            nil
+        // Swift cannot call the C EV_SET macro directly, so initialize kevent manually.
+        var event = kevent(
+            ident: UInt(watchedDescriptor),
+            filter: Int16(EVFILT_VNODE),
+            flags: UInt16(EV_ADD | EV_ENABLE | EV_CLEAR),
+            fflags: UInt32(NOTE_WRITE | NOTE_RENAME | NOTE_DELETE | NOTE_REVOKE),
+            data: 0,
+            udata: nil
         )
         kevent(kqueueDescriptor, &event, 1, nil, 0, nil)
 

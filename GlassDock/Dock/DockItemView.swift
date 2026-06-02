@@ -67,7 +67,7 @@ final class DockItemView: NSView {
         NSAnimationContext.runAnimationGroup { context in
             context.duration = 0.15
             context.timingFunction = CAMediaTimingFunction(name: .easeOut)
-            animator().frameOrigin = NSPoint(x: baseFrameOrigin.x, y: baseFrameOrigin.y + liftY)
+            animator().setFrameOrigin(NSPoint(x: baseFrameOrigin.x, y: baseFrameOrigin.y + liftY))
         }
         needsLayout = true
     }
@@ -127,7 +127,7 @@ final class DockItemView: NSView {
             let offset: CGFloat = count.isMultiple(of: 2) ? 16 : -16
             NSAnimationContext.runAnimationGroup { context in
                 context.duration = 0.1
-                self.animator().frameOrigin = NSPoint(x: self.frame.origin.x, y: self.frame.origin.y + offset)
+                self.animator().setFrameOrigin(NSPoint(x: self.frame.origin.x, y: self.frame.origin.y + offset))
             }
             count += 1
             if count >= 4 {

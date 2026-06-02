@@ -24,7 +24,10 @@ jobs:
             -project GlassDock.xcodeproj \
             -scheme GlassDock \
             -configuration Release \
+            -destination 'platform=macOS,arch=x86_64' \
             -derivedDataPath build/DerivedData \
+            ARCHS=x86_64 \
+            ONLY_ACTIVE_ARCH=NO \
             CODE_SIGNING_ALLOWED=NO \
             build
 
@@ -37,6 +40,6 @@ jobs:
       - name: Upload app artifact
         uses: actions/upload-artifact@v4
         with:
-          name: GlassDock-macOS-app
+          name: GlassDock-macOS-x86_64-app
           path: GlassDock.zip
           if-no-files-found: error

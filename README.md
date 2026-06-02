@@ -19,7 +19,13 @@ GlassDock is a native macOS AppKit application that replaces the visible system 
 ## Build locally
 
 ```bash
-xcodebuild -project GlassDock.xcodeproj -scheme GlassDock -configuration Release build
+xcodebuild \
+  -project GlassDock.xcodeproj \
+  -scheme GlassDock \
+  -configuration Release \
+  -destination 'platform=macOS,arch=x86_64' \
+  ARCHS=x86_64 \
+  build
 ```
 
-The app hides the system Dock while running and restores it on termination.
+The app hides the system Dock while running and restores it on termination. CI also builds the x86_64 app and uploads `GlassDock.zip` as a workflow artifact.
